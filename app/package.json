@@ -1,0 +1,34 @@
+{
+  "name": "reactron",
+  "productName": "Reactron",
+  "version": "1.0.0",
+  "description": "Reactron Desktop App",
+  "license": "Apache-2.0",
+  "copyright": "Manish Jangir",
+  "author": {
+    "name": "Manish Jangir",
+    "email": "mjangir70@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjangir/reactron.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mjangir/reactron/issues"
+  },
+  "main": "./electron/main.prod.js",
+  "keywords": [
+    "Reactron",
+    "react with electron",
+    "electron",
+    "electron boilerplate",
+    "react electron"
+  ],
+  "scripts": {
+    "electron-rebuild": "cross-env BABEL_ENV=electron node -r babel-register ../internals/scripts/electron-rebuild.js",
+    "postinstall": "npm run electron-rebuild"
+  },
+  "dependencies": {
+    "electron-is-dev": "^0.3.0"
+  }
+}

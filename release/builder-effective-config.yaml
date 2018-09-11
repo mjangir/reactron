@@ -1,0 +1,59 @@
+directories:
+  output: release
+  buildResources: resources
+appId: org.mjangir.reactron
+asar: true
+files:
+  - build/
+  - node_modules/
+  - electron/
+  - package.json
+copyright: ©2018 Reactron Boilerplate
+mac:
+  category: public.app-category.productivity
+  artifactName: '${productName}-${version}-${arch}.${ext}'
+linux:
+  category: Chat;GNOME;GTK;Network;InstantMessaging
+  packageCategory: GNOME;GTK;Network;InstantMessaging
+  description: Reactron Desktop Client for Linux
+  target:
+    - deb
+    - zip
+    - AppImage
+    - snap
+  maintainer: Manish Jangir <mjangir70@gmail.com>
+  artifactName: '${productName}-${version}-${arch}.${ext}'
+deb:
+  synopsis: Reactron Desktop App
+  afterInstall: ./scripts/debian-add-repo.sh
+  afterRemove: ./scripts/debian-uninstaller.sh
+snap:
+  synopsis: Reactron Desktop App
+dmg:
+  background: build/appdmg.png
+  icon: build/icon.icns
+  iconSize: 100
+  contents:
+    - x: 380
+      'y': 280
+      type: link
+      path: /Applications
+    - x: 110
+      'y': 280
+      type: file
+  window:
+    width: 500
+    height: 500
+win:
+  target:
+    - target: nsis
+      arch:
+        - ia32
+        - x64
+  icon: build/icon.ico
+  publisherName: Manish Jangir
+nsis:
+  perMachine: true
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+electronVersion: 2.0.8
