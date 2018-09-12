@@ -17,7 +17,7 @@ export default defineMessages({
   },
   trymeHeader: {
     id: 'boilerplate.containers.HomePage.tryme.header',
-    defaultMessage: 'Try me!',
+    defaultMessage: 'Hello Reactron',
   },
   trymeMessage: {
     id: 'boilerplate.containers.HomePage.tryme.message',

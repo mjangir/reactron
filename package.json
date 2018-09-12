@@ -50,7 +50,7 @@
     "build:main": "cross-env NODE_ENV=production BABEL_ENV=electron node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config internals/webpack/webpack.main.prod.js --colors",
     "build:renderer": "cross-env NODE_ENV=production BABEL_ENV=electron node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config internals/webpack/webpack.prod.babel.js --colors",
     "release:clean": "rimraf ./release",
-    "package": "npm run release:clean && npm run build && build --publish always",
+    "package": "npm run release:clean && npm run build && build --publish never",
     "package-all": "npm run release:clean && npm run build && build -mwl",
     "package-linux": "npm run release:clean && npm run build && build --linux",
     "package-win": "npm run release:clean && npm run build && build --win --x64"
@@ -62,7 +62,8 @@
       "build/",
       "node_modules/",
       "electron/",
-      "package.json"
+      "package.json",
+      "resources"
     ],
     "copyright": "©2018 Reactron Boilerplate",
     "mac": {
