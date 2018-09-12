@@ -4,6 +4,8 @@ app/build
 node_modules
 stats.json
 app/node_modules
+app/electron/main.prod.js
+app/electron/main.prod.js.map
 release
 
 # Cruft
