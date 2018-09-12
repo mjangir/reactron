@@ -1,7 +1,8 @@
-/* eslint global-require: 0, flowtype-errors/show-errors: 0 */
+/* eslint global-require: 0, flowtype-errors/show-errors: 0, no-console: 0 */
 
 import { app, BrowserWindow } from 'electron';
 import MenuBuilder from './menu';
+import sentryUtil from '../utils/electronSentryUtil';
 
 let mainWindow = null;
 
@@ -43,6 +44,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', async () => {
+  sentryUtil.sentryInit();
   if (
     process.env.NODE_ENV === 'development' ||
     process.env.DEBUG_PROD === 'true'

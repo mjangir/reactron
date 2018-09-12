@@ -1,7 +1,7 @@
 {
   "name": "reactron",
   "productName": "Reactron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reactron Desktop App",
   "license": "Apache-2.0",
   "copyright": "Manish Jangir",
@@ -29,6 +29,10 @@
     "postinstall": "npm run electron-rebuild"
   },
   "dependencies": {
-    "electron-is-dev": "^0.3.0"
+    "@sentry/electron": "^0.9.0",
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.17",
+    "electron-settings": "^3.2.0",
+    "electron-updater": "^3.1.2"
   }
 }

@@ -1,4 +1,5 @@
 import { app, Menu, shell } from 'electron';
+import autoUpdater from './autoupdater';
 
 export default class MenuBuilder {
   mainWindow;
@@ -201,9 +202,9 @@ export default class MenuBuilder {
         label: 'Help',
         submenu: [
           {
-            label: 'Learn More',
+            label: `Check for Update`,
             click() {
-              shell.openExternal('http://electron.atom.io');
+              autoUpdater.appUpdater(true);
             },
           },
           {
