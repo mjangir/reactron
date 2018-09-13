@@ -16,7 +16,7 @@ export const setAutoLaunch = autoLaunchValue => {
       ? app.getPath('exe').replace(/\.app\/Content.*/, '.app')
       : undefined; // Use the default
 
-  const ReactronAutoLauncher = new AutoLaunch({
+  const AutoLauncher = new AutoLaunch({
     name: 'Reactron',
     path: appPath,
     isHidden: false,
@@ -24,8 +24,8 @@ export const setAutoLaunch = autoLaunchValue => {
   const autoLaunchOption = es.get('startAtLogin', autoLaunchValue);
 
   if (autoLaunchOption) {
-    ReactronAutoLauncher.enable();
+    AutoLauncher.enable();
   } else {
-    ReactronAutoLauncher.disable();
+    AutoLauncher.disable();
   }
 };
