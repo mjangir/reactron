@@ -11,10 +11,9 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
-import { ipcRenderer } from 'electron';
-import electronSettings from 'electron-settings';
 import {
   makeSelectRepos,
   makeSelectLoading,
@@ -33,18 +32,9 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import appTray from '../../lib/AppTray';
 
 /* eslint-disable react/prefer-stateless-function */
-export class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.toggleAutoLaunch = this.toggleAutoLaunch.bind(this);
-    this.toggleTray = this.toggleTray.bind(this);
-    this.state = {
-      autoLaunch: electronSettings.get('startAtLogin'),
-    };
-  }
+export class HomePage extends React.PureComponent {
   /**
    * when initial state username is not null, submit the form to load repos
    */
@@ -52,22 +42,6 @@ export class HomePage extends React.Component {
     if (this.props.username && this.props.username.trim().length > 0) {
       this.props.onSubmitForm();
     }
-    electronSettings.set('showTrayIcon', true);
-    appTray.showTrayIcon();
-  }
-
-  toggleAutoLaunch() {
-    const autoLaunch = electronSettings.get('startAtLogin');
-    const newValue = !autoLaunch;
-    electronSettings.set('startAtLogin', newValue);
-    ipcRenderer.send('toggle-auto-launcher', newValue);
-    this.setState({
-      autoLaunch: electronSettings.get('startAtLogin'),
-    });
-  }
-
-  toggleTray() {
-    appTray.toggleTrayIcon();
   }
 
   render() {
@@ -100,9 +74,6 @@ export class HomePage extends React.Component {
             <H2>
               <FormattedMessage {...messages.trymeHeader} />
             </H2>
-            <button onClick={this.toggleAutoLaunch}>Toggle Autolaunch</button>
-            {`Auto Launch is ${this.state.autoLaunch}`}
-            <button onClick={this.toggleTray}>Toggle Tray</button>
             <Form onSubmit={this.props.onSubmitForm}>
               <label htmlFor="username">
                 <FormattedMessage {...messages.trymeMessage} />
