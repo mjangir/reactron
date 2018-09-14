@@ -7,8 +7,10 @@ ___
 ### Installation
 >**Note:**
 >Whether you have native dependencies in your app or not, I assume it's nice to always have node-gyp build tools installed on your machine.
--**For Windows:** ```npm install --global --production windows-build-tools``` from CMD or Powershell (With Admin)
-**For Ubuntu:** [Follow My Answer On Stackoverflow](https://stackoverflow.com/questions/21155922/error-installing-node-gyp-on-ubuntu/51667296#51667296)
+>
+>**For Windows:** ```npm install --global --production windows-build-tools``` from CMD or Powershell (With Admin)
+>
+>**For Ubuntu:** [Follow My Answer On Stackoverflow](https://stackoverflow.com/questions/21155922/error-installing-node-gyp-on-ubuntu/51667296#51667296)
 
 ##### Then
 First, clone the repository from github:
