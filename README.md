@@ -5,6 +5,12 @@ Reactron is a boilerplate to kick start your electron application with react bas
 [![React](https://i.imgur.com/EHTkSo4.png)](https://facebook.github.io/react/) [![Redux](https://i.imgur.com/Dc5hwbH.png)](http://redux.js.org/) [![Webpack](https://i.imgur.com/bnWDwBq.png)](https://webpack.github.io/) [![BabelJS](https://i.imgur.com/E7u0hE2.png)](https://babeljs.io) [![React Router](https://i.imgur.com/XHfcLEk.png)](https://reacttraining.com/react-router/) [![Jest](https://i.imgur.com/fZMgFph.png)](https://jestjs.io/) [![ESLint](https://i.imgur.com/HB0kxnC.png)](https://eslint.org/)
 ___
 ### Installation
+>**Note:**
+>Whether you have native dependencies in your app or not, I assume it's nice to always have node-gyp build tools installed on your machine.
+**For Windows:** ```npm install --global --production windows-build-tools```
+**For Ubuntu:** [Follow My Answer On Stackoverflow](https://stackoverflow.com/questions/21155922/error-installing-node-gyp-on-ubuntu/51667296#51667296)
+
+##### Then
 First, clone the repository from github:
 ```{r, engine='sh'}
 $ git clone https://github.com/mjangir/reactron.git
