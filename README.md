@@ -3,6 +3,8 @@
 Reactron is a boilerplate to kick start your electron application with react based on [Electron](https://electronjs.org/) and the famous [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate).
 
 [![React](https://i.imgur.com/EHTkSo4.png)](https://facebook.github.io/react/) [![Redux](https://i.imgur.com/Dc5hwbH.png)](http://redux.js.org/) [![Webpack](https://i.imgur.com/bnWDwBq.png)](https://webpack.github.io/) [![BabelJS](https://i.imgur.com/E7u0hE2.png)](https://babeljs.io) [![React Router](https://i.imgur.com/XHfcLEk.png)](https://reacttraining.com/react-router/) [![Jest](https://i.imgur.com/fZMgFph.png)](https://jestjs.io/) [![ESLint](https://i.imgur.com/HB0kxnC.png)](https://eslint.org/)
+
+![React Boilerplate Electron Version](https://i.imgur.com/MbImxwk.png)
 ___
 ### Installation
 >**Note:**
